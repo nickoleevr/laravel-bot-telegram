@@ -1,6 +1,6 @@
-<h1>Integração de Listagem de Usuários com JWTAuth</h1>
+<h1>Bot Telegram com JWT Authentication</h1>
 
-<p>Este projeto implementa uma API com autenticação baseada em JWT (JSON Web Token) para proteger a rota de listagem de usuários. A aplicação requer que o usuário faça login usando um email e senha para obter um token JWT, o qual será utilizado para acessar a rota protegida que retorna a listagem de usuários.</p>
+<p>Este projeto implementa um bot do Telegram utilizando JWT (JSON Web Token) para autenticação. Ele permite enviar mensagens automáticas para os usuários de forma segura, utilizando a verificação do token JWT para garantir que apenas usuários autorizados possam interagir com o bot.</p>
 
 <h2>Tecnologias utilizadas</h2>
 <ul>
