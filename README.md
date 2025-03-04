@@ -6,6 +6,7 @@
 <ul>
     <li>PHP (Laravel)</li>
     <li>JWTAuth para autenticação</li>
+    <li>API Telegram - BOT</li>
     <li>MySQL ou outro banco de dados relacional</li>
 </ul>
 
@@ -21,11 +22,11 @@
 
 <h3>1. Clonando o repositório</h3>
 <p>Clone o repositório em seu ambiente local:</p>
-<pre><code>git clone https://github.com/nickoleevr/laravel-jwt-auth.git</code></pre>
+<pre><code>git clone https://github.com/nickoleevr/laravel-bot-telegram.git</code></pre>
 
 <h3>2. Instalando dependências</h3>
 <p>Acesse o diretório do projeto e instale as dependências usando o Composer:</p>
-<pre><code>cd laravel-jwt-auth
+<pre><code>cd laravel-bot-telegram
 composer install</code></pre>
 
 <h3>3. Configurando o ambiente</h3>
@@ -38,8 +39,11 @@ DB_PORT=3306
 DB_DATABASE=nome_do_banco
 DB_USERNAME=usuario
 DB_PASSWORD=senha</code></pre>
-<p>Adicione também as configurações do JWT:</p>
+<p>Adicione as configurações do JWT:</p>
 <pre><code>JWT_SECRET=suachavesecreta</code></pre>
+<p>Adicione também o token e id do chat do seu bot do Telegram:</p>
+<pre><code>TELEGRAM_BOT_TOKEN=seutoken</code></pre>
+<pre><code>TELEGRAM_CHAT_ID=seuid</code></pre>
 
 <h3>4. Gerando a chave JWT</h3>
 <p>Execute o comando para gerar a chave secreta do JWT:</p>
@@ -91,38 +95,21 @@ DB_PASSWORD=senha</code></pre>
   "token": "seu-token-jwt-gerado-aqui"
 }</code></pre>
 
-<h3>2. Listagem de Usuários (Requer JWT no Bearer)</h3>
+<h3>2. Envio da Mensagem (Requer JWT no Bearer)</h3>
 <ul>
     <li><strong>Método:</strong> GET</li>
-    <li><strong>Rota:</strong> /api/users</li>
+    <li><strong>Rota:</strong> /api/sendMessageTelegram</li>
     <li><strong>Autenticação:</strong> Bearer Token (JWT)</li>
 </ul>
 
 <p><strong>Exemplo de Requisição (Postman)</strong></p>
 <ul>
-    <li><strong>URL:</strong> api/users</li>
+    <li><strong>URL:</strong> api/sendMessageTelegram</li>
     <li><strong>Método:</strong> GET</li>
     <li><strong>Cabeçalhos:</strong>
         <pre><code>Authorization: Bearer seu-token-jwt-gerado-aqui</code></pre>
     </li>
 </ul>
-
-<p><strong>Exemplo de Resposta</strong></p>
-<p>Se o token for válido, você receberá a lista de usuários cadastrados:</p>
-<pre><code>[
-  {
-    "id": 1,
-    "email": "usuario@exemplo.com",
-    "created_at": "2025-02-09T12:00:00",
-    "updated_at": "2025-02-09T12:00:00"
-  },
-  {
-    "id": 2,
-    "email": "outro@exemplo.com",
-    "created_at": "2025-02-09T12:05:00",
-    "updated_at": "2025-02-09T12:05:00"
-  }
-]</code></pre>
 
 
 <h2>Licença</h2>
